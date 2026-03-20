@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/deposits")
 public class DepositController {
     DepositService depositService;
-
+ @PostMapping  
     public Deposit createDeposit(DepositDTO depositDTO) {
         return  depositService.createDeposit(depositDTO);
     }

@@ -15,7 +15,7 @@ public class DepositController {
         this.depositService = depositService;
     }
  @PostMapping  
-    public Deposit createDeposit(DepositDTO depositDTO) {
+    public Deposit createDeposit(@Valid @RequestBody DepositDTO depositDTO) {
         return  depositService.createDeposit(depositDTO);
     }
 }

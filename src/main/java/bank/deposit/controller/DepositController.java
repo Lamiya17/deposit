@@ -9,7 +9,11 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/deposits")
 public class DepositController {
-    DepositService depositService;
+    private final DepositService depositService;
+
+    public DepositController(DepositService depositService) {
+        this.depositService = depositService;
+    }
  @PostMapping  
     public Deposit createDeposit(DepositDTO depositDTO) {
         return  depositService.createDeposit(depositDTO);
